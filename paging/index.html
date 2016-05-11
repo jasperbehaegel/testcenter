@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<title>Paging</title>
+
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+	<!-- Scripts -->
+	<script type="text/javascript" src="../assetmanager/js/jquery-1.9.1.min.js"></script>
+
+	<script type="text/javascript" src="paging.js"></script>
+
+
+	<!-- Styles -->
+	<link rel="stylesheet" type="text/css" href="../assetmanager/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="../assetmanager/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="../assetmanager/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="../assetmanager/css/responsive.css" />
+	<link rel="stylesheet" type="text/css" href="../assetmanager/css/print.css" />
+
+	<link rel="stylesheet" type="text/css" href="paging.css" />
+
+
+</head>
+<body>
+
+<div class="contentblock contentblock--centered">
+
+	<h1 class="maintitle">Paging</h1>
+
+	<div class="feature-description">
+		<p class="text">Default paging.</p>
+		<p class="text text--todo">TODO: Convert this script to a jQuery extension, independantly of class names and elements.</p>
+		<p class="text text--todo">TODO: Display page when only 1 behind 3 dots (&hellip;).</p>
+		<p class="text text--todo">TODO: Make 3 dots (&hellip;) clickable to display the numbers behing hidden by it.</p>
+	</div>
+
+	<!--
+	<ul class="list-touch btnlist">
+		<li class="list-touch__link btn btn--toggle js-toggle-size" data-toggle-modifiers="large, medium, small">toggle loader size (<span class="modifier">large</span>)</li>
+		<li class="list-touch__link btn btn--toggle js-toggle-color" data-toggle-modifiers="grey, blue, red, green">toggle loader colour (<span class="modifier">grey</span>)</li>
+		<li class="list-touch__link btn btn--toggle js-toggle-type" data-toggle-modifiers="default, multi">toggle loader type (<span class="modifier">default</span>)</li>
+	</ul>
+	-->
+
+	<div class="previewblock">
+
+		<div class="paging" data-start="1" data-end="10">
+			<ul class="paging__pages">
+				<li class="paging__page paging__page--previous">previous</li>
+				<li class="paging__page paging__page--number">1</li>
+				<li class="paging__page paging__page--number">2</li>
+				<li class="paging__page paging__page--number">3</li>
+				<li class="paging__page paging__page--more">&hellip;</li>
+				<li class="paging__page paging__page--number paging__page--hidden">4</li>
+				<li class="paging__page paging__page--number paging__page--hidden">5</li>
+				<li class="paging__page paging__page--number paging__page--hidden">6</li>
+				<li class="paging__page paging__page--number paging__page--hidden">7</li>
+				<li class="paging__page paging__page--number paging__page--hidden">8</li>
+				<li class="paging__page paging__page--number paging__page--hidden">9</li>
+				<li class="paging__page paging__page--number">10</li>
+				<li class="paging__page paging__page--next">next</li>
+			</ul>
+		</div>
+
+	</div>
+
+</div>
+
+	<script>
+		// On DOM load
+		$(function(){
+
+			paging.init();
+
+		});
+	</script>
+
+</body>
+</html>

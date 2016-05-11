@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+	<title>Icon Animated</title>
+
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Scripts -->
+	<script src="../assetmanager/js/jquery-1.9.1.min.js"></script>
+
+	<script src="../assetmanager/js/toggleModifier.js"></script>
+
+	<!-- Styles -->
+	<link rel="stylesheet" type="text/css" href="../assetmanager/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="../assetmanager/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="../assetmanager/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="../assetmanager/css/responsive.css" />
+	<link rel="stylesheet" type="text/css" href="../assetmanager/css/print.css" />
+
+	<link rel="stylesheet" type="text/css" href="icon-animated.css" />
+</head>
+<body>
+
+
+<div class="contentblock contentblock--centered">
+
+	<h1 class="maintitle">Icon Animated</h1>
+
+	<div class="feature-description">
+		<p>Icon set build with css only. Icons can be animated into a different state.</p>
+		<p>Consist of only a &lt;div&gt; (no inner &lt;div&gt; required).</p>
+		<p>Dimensions need to be set onto a container element. Set color as background-color on icon element self.</p>
+	</div>
+
+	<ul class="list-touch btnlist">
+		<li class="list-touch__link btn btn--toggle js-toggle-size" data-toggle-modifiers="small, medium, large">toggle icon size (<span class="modifier">large</span>)</li>
+		<li class="list-touch__link btn btn--toggle js-toggle-type" data-toggle-modifiers="menu, bars, cross, plus, chevronright, chevronleft, arrowright, arrowleft, triangle">toggle icon type (<span class="modifier">menu</span>)</li>
+		<li class="list-touch__link btn btn--toggle js-toggle-color" data-toggle-modifiers="grey, blue, red, green">toggle icon colour (<span class="modifier">grey</span>)</li>
+	</ul>
+
+	<div class="previewblock">
+
+		<div class="icon-container icon-container--large icon-container--grey">
+			<div class="icon-animated icon-animated--menu"></div>
+		</div>
+
+	</div>
+
+</div>
+
+<script>
+	$(function(){
+
+		// Toggle modifiers onclick
+		$('.js-toggle-type').on('click', function(){
+
+			// Get modifiers
+			var modifiers = $(this).data('toggle-modifiers').split(', ');
+
+			// Toggle modifier
+			$('.icon-animated').toggleModifier({
+				baseClass: 'icon-animated',
+				modifiers: modifiers
+			});
+
+			// Get modifier name
+			for(var i = 0; modifiers.length > i; i++){
+				if($('.icon-animated').hasClass('icon-animated--' + modifiers[i])){
+					$(this).find('.modifier').text(modifiers[i]);
+				}
+			}
+		});
+
+		// Toggle modifiers onclick
+		$('.js-toggle-size').on('click', function(){
+
+			// Get modifiers
+			var modifiers = $(this).data('toggle-modifiers').split(', ');
+
+			// Toggle modifier
+			$('.icon-container').toggleModifier({
+				baseClass: 'icon-container',
+				modifiers: modifiers
+			});
+
+			// Get modifier name
+			for(var i = 0; modifiers.length > i; i++){
+				if($('.icon-container').hasClass('icon-container--' + modifiers[i])){
+					$(this).find('.modifier').text(modifiers[i]);
+				}
+			}
+		});
+
+		// Toggle modifiers onclick
+		$('.js-toggle-color').on('click', function(){
+
+			// Get modifiers
+			var modifiers = $(this).data('toggle-modifiers').split(', ');
+
+			// Toggle modifier
+			$('.icon-container').toggleModifier({
+				baseClass: 'icon-container',
+				modifiers: modifiers
+			});
+
+			// Get modifier name
+			for(var i = 0; modifiers.length > i; i++){
+				if($('.icon-container').hasClass('icon-container--' + modifiers[i])){
+					$(this).find('.modifier').text(modifiers[i]);
+				}
+			}
+		});
+
+	});
+</script>
+
+</body>
+</html>

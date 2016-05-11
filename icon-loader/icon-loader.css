@@ -1,0 +1,173 @@
+/*
+	icon-loader
+	block & elements
+	============================
+*/
+
+/* Icon container code: Unnecessary in production except for width */
+.icon-container {
+	width: 100px;
+	height: 100px;
+
+	display: inline-block;
+	vertical-align: middle;
+	outline: 1px solid #ccc;
+
+	transition: all 500ms;
+}
+
+.icon-container--small {
+	width: 20px;
+	height: 20px;
+}
+
+.icon-container--medium {
+	width: 50px;
+	height: 50px;
+}
+
+.icon-container--large {
+	width: 100px;
+	height: 100px;
+}
+
+.icon-container--grey .icon-loader__element {background: #999;}
+.icon-container--blue .icon-loader__element	{background: #3373D2;}
+.icon-container--red .icon-loader__element 	{background: #C52B2B;}
+.icon-container--green .icon-loader__element{background: #339023;}
+
+
+.icon-container--grey .icon-loader__element .svg-icon__element  {fill: #999;}
+.icon-container--blue .icon-loader__element .svg-icon__element	{fill: #3373D2;}
+.icon-container--red .icon-loader__element .svg-icon__element 	{fill: #C52B2B;}
+.icon-container--green .icon-loader__element .svg-icon__element {fill: #339023;}
+/**/
+
+
+
+.icon-loader{
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.icon-loader__element{
+	position: absolute;
+
+	height: 10%;
+	width: 100%;
+
+	background: grey;
+	transition: all 500ms;
+}
+
+.icon-loader__element svg{
+	display: none;
+}
+
+.icon-loader__element .svg-icon__element{	
+	transition: all 500ms;
+}
+
+
+
+/*
+	icon-loader
+	modifiers (type)
+	============================
+*/
+
+/* balls */
+.icon-loader--balls{
+	animation: rotate360 3s infinite linear;
+	animation-duration: 1.5s;
+}
+
+.icon-loader--balls .icon-loader__element{
+	width: 20%;
+	height: 20%;
+	border-radius: 100%;
+}
+
+.icon-loader--balls .icon-loader__element:nth-child(1){
+	transform: translateY(400%) translateX(200%);
+	opacity: 1;
+}
+
+.icon-loader--balls .icon-loader__element:nth-child(2){
+	transform: translateY(335%) translateX(65%);
+	/*bottom: 12%;
+	left: 12%;*/
+	opacity: 0;
+	display: none;
+}
+
+.icon-loader--balls .icon-loader__element:nth-child(3){
+	transform: translateY(200%) translateX(0);
+	/*top: 40%;
+	left: 0;*/
+	opacity: 0.1;
+}
+
+.icon-loader--balls .icon-loader__element:nth-child(4){
+	transform: translateY(65%) translateX(65%);
+	/*top: 12%;
+	left: 12%;*/
+	opacity: 0.25;
+}
+
+.icon-loader--balls .icon-loader__element:nth-child(5){
+	transform: translateY(0) translateX(200%);
+	/*top: 0;
+	left: 40%;*/
+	opacity: 0.4;
+}
+
+.icon-loader--balls .icon-loader__element:nth-child(6){
+	transform: translateY(65%) translateX(335%);
+	/*top: 12%;
+	right: 12%;*/
+	opacity: 0.55;
+}
+
+.icon-loader--balls .icon-loader__element:nth-child(7){
+	transform: translateY(200%) translateX(400%);
+	/*top: 40%;
+	right: 0;*/
+	opacity: 0.7;
+}
+
+.icon-loader--balls .icon-loader__element:nth-child(8){
+	transform: translateY(335%) translateX(335%);
+	/*bottom: 12%;
+	right: 12%;*/
+	opacity: 0.85;
+}
+
+@keyframes rotate360{
+	0%{
+		transform: rotate(0deg);
+	}
+	100%{
+		transform: rotate(360deg);
+	}
+}
+
+
+/* square */
+.icon-loader--square .icon-loader__element:nth-child(1){
+	top: 0;
+}
+.icon-loader--square .icon-loader__element:nth-child(2){
+	top: 0;
+	left: -45%;
+	transform: rotate(90deg);
+}
+.icon-loader--square .icon-loader__element:nth-child(3){
+	bottom: 0;
+}
+.icon-loader--square .icon-loader__element:nth-child(4){
+	top: 0;
+	right: -45%;
+	transform: rotate(90deg);
+}

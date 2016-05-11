@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+	<title>Hero Banner</title>
+
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Scripts -->
+	<script src="../assetmanager/js/jquery-1.9.1.min.js"></script>
+
+	<script src="../assetmanager/js/toggleModifier.js"></script>
+
+	<!-- Styles -->
+	<link rel="stylesheet" type="text/css" href="../assetmanager/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="../assetmanager/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="../assetmanager/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="../assetmanager/css/responsive.css" />
+	<link rel="stylesheet" type="text/css" href="../assetmanager/css/print.css" />
+
+	<link rel="stylesheet" type="text/css" href="hero-banner.css" />
+</head>
+<body>
+
+
+<div class="contentblock contentblock--centered">
+
+	<h1 class="maintitle">Hero Banner</h1>
+
+	<div class="feature-description">
+		<p>Image banner, stretching to the full width of the viewport and visible in a nice way in all viewport sizes (mobile -> desktop)</p>
+		<p>See how the 50% doesn't completely fill the container box in table or mobile view. This is because the aspect-ratio of this particular image is less then 2:1</p>
+		<p>Top example: with background image: flexibility in positioning, but not in filesize.</p>
+		<p>Bottom example: with &lt;img&gt; tag and srcset attribute: flexibility in image file size and centered with a transform.</p>
+		<p>Explanation of the srcset attribute: <a href="http://martinwolf.org/2014/05/07/the-new-srcset-and-sizes-explained/">http://martinwolf.org/2014/05/07/the-new-srcset-and-sizes-explained/</a></p>
+		<p>Browser support: good, see <a href="http://caniuse.com/#search=srcset">http://caniuse.com/#search=srcset</a></p>
+	</div>
+
+	<ul class="list-touch btnlist">
+		<li class="list-touch__link btn btn--toggle js-toggle-size" data-toggle-modifiers="25, 33, 50">toggle banner height (<span class="modifier">50</span>%)</li>
+		<li class="list-touch__link btn btn--toggle js-toggle-max-height" data-toggle-modifiers="150, 200, 300, 9999">toggle banner max-height (<span class="modifier">300</span>px)</li>
+	</ul>
+
+</div>
+
+<div class="contentblock">
+	<div class="previewblock previewblock--empty">
+
+		<div class="hero-banner hero-banner--50 hero-banner--300" style="background-image: url('bmw-building-4-xl.jpg');"></div>
+
+	</div>
+	<div class="previewblock previewblock--empty">
+
+		<div class="hero-banner hero-banner--50 hero-banner--300">
+			<!--
+				sizes attribute:
+					- define expected image width at various breakpoint (similar to your media queries)
+					- eg. sizes="(min-width: 768px) 50vw, 100vw"
+					- end with default
+				srcset attribute:
+				 	- define image url per size, and define width of image (why? -> so browser doesn't need to download the image, to know if it fits or not)
+			-->
+			<img src="bmw-building-4-xl.jpg"
+				 sizes="100vw"
+				 srcset="bmw-building-4-sm.jpg 480w,
+				 		 bmw-building-4-md.jpg 600w,
+				 		 bmw-building-4-lg.jpg 768w,
+				 		 bmw-building-4-xl.jpg 1024w" />
+		</div>
+
+	</div>
+</div>
+
+<script>
+	$(function(){
+
+		// Toggle modifiers onclick
+		$('.js-toggle-size').on('click', function(){
+
+			// Get modifiers
+			var modifiers = $(this).data('toggle-modifiers').split(', ');
+
+			// Toggle modifier
+			$('.hero-banner').toggleModifier({
+				baseClass: 'hero-banner',
+				modifiers: modifiers
+			});
+
+			// Get modifier name
+			for(var i = 0; modifiers.length > i; i++){
+				if($('.hero-banner').hasClass('hero-banner--' + modifiers[i])){
+					$(this).find('.modifier').text(modifiers[i]);
+				}
+			}
+		});
+
+		// Toggle modifiers onclick
+		$('.js-toggle-max-height').on('click', function(){
+
+			// Get modifiers
+			var modifiers = $(this).data('toggle-modifiers').split(', ');
+
+			// Toggle modifier
+			$('.hero-banner').toggleModifier({
+				baseClass: 'hero-banner',
+				modifiers: modifiers
+			});
+
+			// Get modifier name
+			for(var i = 0; modifiers.length > i; i++){
+				if($('.hero-banner').hasClass('hero-banner--' + modifiers[i])){
+					$(this).find('.modifier').text(modifiers[i]);
+				}
+			}
+		});
+
+	});
+</script>
+
+</body>
+</html>

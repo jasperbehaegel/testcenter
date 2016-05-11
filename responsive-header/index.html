@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<title>Responsive header</title>
+
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+	<!-- Scripts -->
+	<script src="../assetmanager/js/jquery-1.9.1.min.js"></script>
+	<script src="../assetmanager/js/toggleModifier.js"></script>
+
+	<script src="nav-responsive.js"></script>
+
+
+	<!-- Styles -->
+	<link rel="stylesheet" type="text/css" href="../assetmanager/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="../assetmanager/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="../assetmanager/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="../assetmanager/css/responsive.css" />
+	<link rel="stylesheet" type="text/css" href="../assetmanager/css/print.css" />
+
+	<link rel="stylesheet" type="text/css" href="../icon-animated/icon-animated.css" />
+	<link rel="stylesheet" type="text/css" href="nav-top.css" />
+	<link rel="stylesheet" type="text/css" href="menu.css" />
+
+
+</head>
+<body>
+
+<div id="main-nav" class="nav-top">
+	<div class="nav-top__menu-bar">
+		<ul class="menu">
+			<li class="menu__item"><a href="##">Home</a></li>
+			<li class="menu__item"><a href="##">About</a></li>
+			<li class="menu__item"><a href="##">Learn more</a></li>
+			<li class="menu__item"><a href="##">Contact</a></li>
+		</ul>
+	</div>
+	<div class="nav-top__menu-toggler">
+		<div class="nav-top__menu-icon">
+			<div class="icon-animated icon-animated--menu"></div>
+		</div>
+	</div>
+</div>
+
+<script>
+	$(function(){
+		$('#main-nav').navResponsive({
+			togglerSelector: '.nav-top__menu-toggler'
+		});
+	});
+</script>
+
+
+<br>
+
+<div class="contentblock contentblock--centered">
+
+	<h1 class="maintitle">Responsive header</h1>
+
+	<div class="feature-description">
+		<p class="text">...</p>
+	</div>
+
+	<p>
+		Nulla quis lorem ut libero malesuada feugiat. Donec sollicitudin molestie malesuada. Nulla porttitor accumsan tincidunt. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Donec rutrum congue leo eget malesuada. Donec rutrum congue leo eget malesuada. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ultricies ligula sed magna dictum porta. Vivamus suscipit tortor eget felis porttitor volutpat.
+	</p>
+
+</div>
+
+</body>
+</html>

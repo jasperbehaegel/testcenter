@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+	<title>Blackbox</title>
+
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Scripts -->
+	<script src="js/libraries/jquery-1.9.1.min.js"></script>
+	<script src="js/components/clearModifiers.js"></script>
+	<script src="js/components/toggleModifier.js"></script>
+
+	<!-- Styles -->
+	<link href="css/defaults/normalize.css" rel="stylesheet" type="text/css" />
+	<link href="css/defaults/fonts.css" rel="stylesheet" type="text/css" />
+	<link href="css/components/grid-base.css" rel="stylesheet" type="text/css" />
+	<link href="css/components/blackbox-logo.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+
+	<div class="row col">
+		<h1 onclick="$(this).find('.blackbox-logo').toggleModifier({modifiers:['light', 'lighter', 'lightest']});"><span class="blackbox-logo blackbox-logo--light"></span> Blackbox</h1>
+	</div>
+
+</body>
+</html>

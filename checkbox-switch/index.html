@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<title>Checkbox Switch</title>
+
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+	<!-- Scripts -->
+	<script type="text/javascript" src="../assetmanager/js/jquery-1.9.1.min.js"></script>
+
+	<script src="../assetmanager/js/toggleModifier.js"></script>
+
+
+	<!-- Styles -->
+	<link rel="stylesheet" type="text/css" href="../assetmanager/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="../assetmanager/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="../assetmanager/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="../assetmanager/css/responsive.css" />
+	<link rel="stylesheet" type="text/css" href="../assetmanager/css/print.css" />
+
+	<link rel="stylesheet" type="text/css" href="checkbox-switch.css" />
+
+
+</head>
+<body>
+
+	<div class="contentblock contentblock--centered">
+
+		<h1 class="maintitle">Checkbox Switch</h1>
+
+		<div class="feature-description">
+			<p class="text">A regular checkbox converted into a switch icon</p>
+		</div>
+
+		<ul class="list-touch btnlist">
+			<li class="list-touch__link btn btn--toggle js-toggle-modifier"
+				data-toggle-modifiers="block, inline"
+				data-base-class="checkbox-switch">
+					toggle switch inline type
+			</li>
+			<li class="list-touch__link btn btn--toggle js-toggle-modifier"
+				data-toggle-modifiers="no-icon, has-icon"
+				data-base-class="checkbox-switch">
+					toggle switch icon type
+			</li>
+			<li class="list-touch__link btn btn--toggle js-toggle-modifier"
+				data-toggle-modifiers="labels, no-labels"
+				data-base-class="checkbox-switch">
+					toggle switch labels display
+			</li>
+		</ul>
+
+		<div class="previewblock">
+
+			<label class="checkbox-switch checkbox-switch--block checkbox-switch--no-icon checkbox-switch--labels">
+				<input class="checkbox-switch__checkbox" type="checkbox">
+				<span class="checkbox-switch__label">
+					<span class="checkbox-switch__label-checked">checked</span>
+					<span class="checkbox-switch__label-unchecked">unchecked</span>
+				</span>
+				<div class="checkbox-switch__slider">
+					<span class="checkbox-switch__handle">
+						<span class="checkbox-switch__handle-icon"></span>
+					</span>
+				</div>
+			</label>
+
+		</div>
+
+	</div>
+
+</body>
+</html>

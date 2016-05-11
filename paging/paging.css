@@ -1,0 +1,54 @@
+.paging{
+	display: inline-block;
+
+	text-align: center;
+}
+
+.paging__pages{
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+
+.paging__page{
+	display: inline-block;
+	padding: 8px 12px;
+	cursor: pointer;
+	background: #eee;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+	margin: 0 2px;
+	transition: background 200ms, border 200ms;
+}
+
+.paging__page:hover{
+	border-color: #999;
+}
+
+.paging__page:active{
+	border-color: #333;
+	background: #ddd;
+}
+
+.paging__page--selected,
+.paging__page--selected:hover,
+.paging__page--selected:active{
+	cursor: default;
+	background: white;
+	border-color: #ccc;
+}
+
+.paging__page--disabled,
+.paging__page--disabled:hover,
+.paging__page--disabled:active{
+	opacity: 0.5;
+	cursor: default;
+	border-color: #ccc;
+	background: #eee;
+}
+
+.paging__page--hidden{
+	display: none;
+}

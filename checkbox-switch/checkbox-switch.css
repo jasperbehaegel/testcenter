@@ -1,0 +1,187 @@
+/*
+ * component: checkbox-switch
+ * description: checkbox is seen as a slider switch + the state is described on top
+ * notes:
+ *    - checkbox states like "checked" and "disabled" will work as you expect
+ *    - modifier "inline" lets you display the switch and label inline
+ *    - modifier "has-icon" lets you display a checked icon when checkbox is checked
+ *    - modifier "no-labels" hides the labels from display
+ *    - element "checkbox-switch__label" is optional; don't include it if you don't want to display labels
+ *    - element "checkbox-switch__handle-icon" is optional; don't include it if you don't want to display a checked icon
+ *
+ * html example:
+
+    <label class="checkbox-switch">
+      <input class="checkbox-switch__checkbox" type="checkbox">
+      <span class="checkbox-switch__label">
+          <span class="checkbox-switch__label-checked">on</span>
+          <span class="checkbox-switch__label-unchecked">off</span>
+      </span>
+      <div class="checkbox-switch__slider">
+		<span class="checkbox-switch__handle">
+	        <span class="checkbox-switch__handle-icon"></span>
+		</span>
+      </div>
+    </label>
+
+ * author: Jasper Behaegel
+ *
+ **/
+
+
+
+.checkbox-switch
+{
+	position: relative;
+	display: inline-block;
+
+	padding: 1px 4px;
+}
+
+.checkbox-switch__checkbox
+{
+	display: none;
+}
+
+.checkbox-switch__label
+{
+	display: block;
+
+	font-size: 12px;
+	line-height: 18px;
+	font-weight: normal;
+	font-style: italic;
+	color: #666;
+	white-space: nowrap;
+}
+
+.checkbox-switch__checkbox:disabled ~ .checkbox-switch__label
+{
+	opacity: 0.5;
+}
+
+.checkbox-switch__checkbox:not(:checked) ~ .checkbox-switch__label .checkbox-switch__label-checked
+{
+	display: none;
+}
+
+.checkbox-switch__checkbox:checked ~ .checkbox-switch__label .checkbox-switch__label-unchecked
+{
+	display: none;
+}
+
+.checkbox-switch__slider
+{
+	display: inline-block;
+	position: relative;
+	margin: 2px 0;
+
+	width: 34px;
+	height: 16px;
+	max-width: none;
+
+	background: #ddd;
+	border-radius: 20px;
+
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+	transition: background 200ms;
+}
+
+.checkbox-switch__checkbox:checked ~ .checkbox-switch__slider
+{
+	background: #4CAF50;
+	box-shadow: none;
+}
+
+.checkbox-switch__checkbox:disabled ~ .checkbox-switch__slider
+{
+	cursor: default;
+}
+
+.checkbox-switch__handle
+{
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 100%;
+	margin-top: -3px;
+	margin-right: -20px;
+
+	width: 22px;
+	height: 22px;
+	height: calc(100% + 6px);
+
+	background: #999;
+	border-radius: 20px;
+	box-shadow: 0 2px 5px rgba(0,0,0,0.25);
+
+	transition: all 200ms;
+}
+
+.checkbox-switch__checkbox:checked ~ .checkbox-switch__slider .checkbox-switch__handle
+{
+	right: 0;
+	margin-right: -2px;
+
+	background: #237D27;
+}
+
+.checkbox-switch__checkbox:disabled ~ .checkbox-switch__slider
+{
+	opacity: 0.5;
+}
+
+
+
+
+/*
+ * modifier: inline
+ *  - makes the switch element and label text display inline
+ */
+.checkbox-switch--inline:not(.checkbox-switch--no-labels)
+{
+	padding-left: 40px;
+}
+
+.checkbox-switch--inline:not(.checkbox-switch--no-labels) .checkbox-switch__slider
+{
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+
+/*
+ * modifier: has-icon
+ *  - display an icon on a checked switch handle (eg.a "v" icon)
+ */
+.checkbox-switch--has-icon .checkbox-switch__handle-icon
+{
+	display: block;
+
+	width: 100%;
+	height: 100%;
+
+	opacity: 0;
+	background: url('checked-white-medium.svg') no-repeat center;
+
+	transition: opacity 200ms;
+}
+
+.checkbox-switch--has-icon .checkbox-switch__checkbox:checked ~ .checkbox-switch__slider .checkbox-switch__handle-icon
+{
+	opacity: 1;
+}
+
+
+/*
+ * modifier: no-labels
+ *  - don't display labels
+ */
+.checkbox-switch--no-labels .checkbox-switch__label
+{
+	display: none;
+}

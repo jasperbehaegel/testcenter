@@ -1,0 +1,215 @@
+/*
+	icon-animated
+	block & elements
+	============================
+*/
+
+/* Icon container code: Unnecessary in production except for width */
+.icon-container {
+	width: 100px;
+	height: 100px;
+
+	display: inline-block;
+	vertical-align: middle;
+	outline: 1px solid #ccc;
+
+	transition: all 500ms;
+}
+
+.icon-container--small {
+	width: 20px;
+	height: 20px;
+}
+
+.icon-container--medium {
+	width: 50px;
+	height: 50px;
+}
+
+.icon-container--large {
+	width: 100px;
+	height: 100px;
+}
+
+.icon-container--grey .icon-animated 	{background: #999;}
+.icon-container--blue .icon-animated	{background: #3373D2;}
+.icon-container--red .icon-animated 	{background: #C52B2B;}
+.icon-container--green .icon-animated 	{background: #339023;}
+/**/
+
+
+.icon-animated {
+	position: relative;
+	
+	height: 10%;
+	width: 100%;
+	margin: 45% 0;
+	
+	background: grey;
+	transition: all 500ms;
+}
+
+
+.icon-animated::before,
+.icon-animated::after {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	height: 100%;
+	width: 100%;
+
+	background: inherit;
+	transition: transform 500ms,
+				opacity 500ms,
+				top 500ms,
+				left 500ms;
+}
+
+.icon-animated::before,
+.icon-animated::after {
+	content: '';
+}
+
+
+
+/*
+	icon-animated
+	modifiers (type)
+	============================
+*/
+
+/* menu */
+.icon-animated--menu::before { top: -300%; }
+.icon-animated--menu::after { top: 300%; }
+
+/* bars */
+.icon-animated--bars { transform: rotate(90deg); }
+.icon-animated--bars::before { top: -300%; }
+.icon-animated--bars::after { top: 300%; }
+
+
+/* cross */
+.icon-animated--cross { transform: rotate(45deg); }
+.icon-animated--cross::before { transform: rotate(90deg); }
+.icon-animated--cross::after { opacity: 0; }
+
+/* plus */
+.icon-animated--plus::before { transform: rotate(90deg); }
+.icon-animated--plus::after { opacity: 0; }
+
+
+/* chevronright */
+.icon-animated--chevronright {
+	top: -21.5%;
+	left: 30%;
+
+	width: 70%;
+
+	transform: rotate(45deg);
+}
+
+.icon-animated--chevronright::before {
+	top: 300%;
+	left: 43.5%;
+
+	transform: rotate(90deg);
+}
+
+.icon-animated--chevronright::after { opacity: 0; }
+
+
+/* chevronleft */
+.icon-animated--chevronleft {
+	top: 21.5%;
+	left: 10%;
+
+	width: 70%;
+
+	transform: rotate(-135deg);
+}
+
+.icon-animated--chevronleft::before {
+	top: 300%;
+	left: 43.5%;
+
+	transform: rotate(90deg);
+}
+
+.icon-animated--chevronleft::after { opacity: 0; }
+
+
+/* arrowright */
+.icon-animated--arrowright{
+	left: 10%;
+
+	width: 70%;
+}
+
+.icon-animated--arrowright::before {
+	top: -212%;
+	left: auto;
+	right: -30%;
+
+	transform: rotate(45deg);
+}
+
+.icon-animated--arrowright::after {
+	top: 212%;
+	left: auto;
+	right: -30%;
+
+	transform: rotate(-45deg);
+}
+
+
+/* arrowleft */
+.icon-animated--arrowleft{
+	left: 20%;
+
+	width: 70%;
+}
+
+.icon-animated--arrowleft::before {
+	top: -212%;
+	left: -30%;
+
+	transform: rotate(-45deg);
+}
+
+.icon-animated--arrowleft::after {
+	top: 212%;
+	left: -30%;
+
+	transform: rotate(45deg);
+}
+
+
+/* triangle */
+.icon-animated--triangle{
+	top: 27%;
+	left: 10%;
+
+	width: 80%;
+	border-radius: 20% 20% 0 0/100% 100% 0 0;
+}
+
+.icon-animated--triangle::before {
+	top: -280%;
+	left: -20.3%;
+
+	border-radius: inherit;
+
+	transform: rotate(120deg);
+}
+
+.icon-animated--triangle::after {
+	top: -280%;
+	left: auto;
+	right: -20.3%;
+
+	border-radius: inherit;
+
+	transform: rotate(-120deg);
+}
+

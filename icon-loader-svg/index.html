@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+	<title>Icon loader svg</title>
+
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Scripts -->
+	<script src="../assetmanager/js/jquery-1.9.1.min.js"></script>
+
+	<script src="../assetmanager/js/toggleModifier.js"></script>
+
+	<!-- Styles -->
+	<link rel="stylesheet" type="text/css" href="../assetmanager/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="../assetmanager/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="../assetmanager/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="../assetmanager/css/responsive.css" />
+	<link rel="stylesheet" type="text/css" href="../assetmanager/css/print.css" />
+
+	<link rel="stylesheet" type="text/css" href="icon-loader-svg.css" />
+</head>
+<body>
+
+	<div class="contentblock contentblock--centered">
+
+		<h1 class="maintitle">icon-loader-svg</h1>
+
+		<div class="feature-description">
+			<p>Loader icon set build with css and svg paths only.</p>
+			<p>Dimensions need to be set onto a container element. Set color as fill on svg elements.</p>
+		</div>
+
+		<ul class="list-touch btnlist">
+			<li class="list-touch__link btn btn--toggle js-toggle-size" data-toggle-modifiers="large, medium, small">toggle loader size (<span class="modifier">large</span>)</li>
+			<li class="list-touch__link btn btn--toggle js-toggle-color" data-toggle-modifiers="grey, blue, red, green">toggle loader colour (<span class="modifier">grey</span>)</li>
+			<li class="list-touch__link btn btn--toggle js-toggle-type" data-toggle-modifiers="default, multi">toggle loader type (<span class="modifier">default</span>)</li>
+		</ul>
+
+		<div class="previewblock">
+
+			<div class="icon-container icon-container--large icon-container--grey">
+				<div class="icon-loader-svg icon-loader-svg--default">
+					<div class="icon-loader-svg__element">
+						<svg
+							class="svg-icon"
+							x="0"
+							y="0"
+							viewBox="0 0 200 200"
+							enable-background="new 0 0 200 200">
+
+							<path
+								class="svg-icon__background"
+								fill="#DBD5D5"
+								d="M100,0C44.772,0,0,44.771,0,100s44.772,100,100,100c55.229,0,100-44.771,100-100S155.229,0,100,0z M100,175c-41.421,0-75-33.579-75-75c0-41.421,33.579-75,75-75c41.422,0,75,33.579,75,75C175,141.421,141.422,175,100,175z"/>
+							<path
+								class="svg-icon__element"
+								fill="#999999"
+								d="M0,100c0,18.27,4.902,35.392,13.458,50.13l21.669-12.51C28.699,126.559,25,113.715,25,100c0-41.421,33.578-75,75-75V0C44.771,0,0,44.771,0,100z"/>
+							<path
+								class="svg-icon__element"
+								fill="#999999"
+								d="M0,100c0,18.27,4.902,35.392,13.458,50.13l21.669-12.51C28.699,126.559,25,113.715,25,100c0-41.421,33.578-75,75-75V0C44.771,0,0,44.771,0,100z"/>
+							<path
+								class="svg-icon__element"
+								fill="#999999"
+								d="M0,100c0,18.27,4.902,35.392,13.458,50.13l21.669-12.51C28.699,126.559,25,113.715,25,100c0-41.421,33.578-75,75-75V0C44.771,0,0,44.771,0,100z"/>
+						</svg>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+	<script>
+		$(function(){
+
+			// Toggle modifiers onclick
+			$('.js-toggle-type').on('click', function(){
+
+				// Get modifiers
+				var modifiers = $(this).data('toggle-modifiers').split(', ');
+
+				// Toggle modifier
+				$('.icon-loader-svg').toggleModifier({
+					baseClass: 'icon-loader-svg',
+					modifiers: modifiers
+				});
+
+				// Get modifier name
+				for(var i = 0; modifiers.length > i; i++){
+					if($('.icon-loader-svg').hasClass('icon-loader-svg--' + modifiers[i])){
+						$(this).find('.modifier').text(modifiers[i]);
+					}
+				}
+			});
+			
+			// Toggle modifiers onclick
+			$('.js-toggle-size').on('click', function(){
+
+				// Get modifiers
+				var modifiers = $(this).data('toggle-modifiers').split(', ');
+
+				// Toggle modifier
+				$('.icon-container').toggleModifier({
+					baseClass: 'icon-container',
+					modifiers: modifiers
+				});
+
+				// Get modifier name
+				for(var i = 0; modifiers.length > i; i++){
+					if($('.icon-container').hasClass('icon-container--' + modifiers[i])){
+						$(this).find('.modifier').text(modifiers[i]);
+					}
+				}
+			});
+
+			// Toggle modifiers onclick
+			$('.js-toggle-color').on('click', function(){
+
+				// Get modifiers
+				var modifiers = $(this).data('toggle-modifiers').split(', ');
+
+				// Toggle modifier
+				$('.icon-container').toggleModifier({
+					baseClass: 'icon-container',
+					modifiers: modifiers
+				});
+
+				// Get modifier name
+				for(var i = 0; modifiers.length > i; i++){
+					if($('.icon-container').hasClass('icon-container--' + modifiers[i])){
+						$(this).find('.modifier').text(modifiers[i]);
+					}
+				}
+			});
+
+		});
+	</script>
+
+</body>
+</html>

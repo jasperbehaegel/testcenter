@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+	<title>Hyphenate</title>
+
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Scripts -->
+	<script src="../assetmanager/js/jquery-2.1.4.min.js"></script>
+	<script src="../assetmanager/js/browserDetect.js"></script>
+
+	<!-- Styles -->
+	<link rel="stylesheet" type="text/css" href="../assetmanager/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="../assetmanager/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="../assetmanager/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="../assetmanager/css/responsive.css" />
+	<link rel="stylesheet" type="text/css" href="../assetmanager/css/print.css" />
+
+	<link rel="stylesheet" type="text/css" href="hyphenated.css" />
+</head>
+<body>
+
+
+<div class="contentblock contentblock--centered">
+
+	<h1 class="maintitle">Hyphenate Test</h1>
+
+	<div class="feature-description">
+		<p>Hyphenate browser support test.<br>
+		With ellipsis backup for browsers not supporting "hyphens". (See: <a href="http://caniuse.com/#feat=css-hyphens">caniuse.com/#feat=css-hyphens</a>)</p>
+		<p>More info on the use of hyphens with CSS: <a href="http://www.w3.org/TR/css3-text/#hyphenation">www.w3.org/TR/css3-text/#hyphenation</a></p>
+		<p>Current Browser: <span class="browser"></span></p>
+	</div>
+
+	<div class="previewblock">
+
+		<div class="hyphenated">
+			<h1>Customization: Most generators only output paragraphs of about
+				the same length. Sometimes you need lists, headings, long paragraphs,
+				short paragraphs, etc. The website/magazine that you're designing
+				probably isn't going to be filled with uniform paragraphs, so your
+				placeholder text should reflect that.</h1>
+		</div>
+
+	</div>
+
+</div>
+
+<script>
+	$(function(){
+
+		// Detect browser
+		browserDetect.init();
+		// Display detected browser + version
+		$('.browser').text(browserDetect.browser + " " + browserDetect.version);
+
+	});
+</script>
+
+</body>
+</html>

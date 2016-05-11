@@ -1,0 +1,30 @@
+.blackbox-logo
+{
+	display: inline-block;
+	vertical-align: baseline;
+	margin-bottom: -1px;
+
+	position: relative;
+
+	width: 30px;
+	height: 30px;
+
+	background: no-repeat url('../../images/blackbox-logo.svg');
+	background-size: 100%;
+}
+
+.blackbox-logo--light
+{
+	opacity: 0.75;
+}
+
+.blackbox-logo--lighter
+{
+	opacity: 0.5;
+}
+
+.blackbox-logo--lightest
+{
+	opacity: 0.25;
+}
+

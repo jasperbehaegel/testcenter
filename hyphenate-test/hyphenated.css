@@ -1,0 +1,33 @@
+.previewblock{
+	height: auto;
+	max-height: none;
+}
+/*
+.previewblock::before{
+	display: none;
+}*/
+
+
+/*
+ *
+ */
+.hyphenated{
+	display: inline-block;
+	vertical-align: middle;
+	outline: 1px solid #ccc;
+	width: 160px;
+	text-align: justify;
+}
+
+.hyphenated{
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	-ms-hyphens: auto;
+	hyphens: auto;
+}
+
+.hyphenated h1{
+	display: block;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}

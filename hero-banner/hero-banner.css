@@ -1,0 +1,36 @@
+.hero-banner{
+	position: relative;
+
+	width: 100%;
+	max-height: 300px;
+	overflow: hidden;
+
+	background: url('default-banner.svg') no-repeat 50%;
+	background-size: 100%;
+}
+
+.hero-banner--150{max-height: 150px;}
+.hero-banner--200{max-height: 200px;}
+.hero-banner--300{max-height: 300px;}
+.hero-banner--9999{max-height: none;}
+
+.hero-banner::before{
+	content: '';
+	display: block;
+
+	width: 100%;
+	padding-bottom: 33.33333333%;
+}
+
+.hero-banner--25::before{padding-bottom: 25%;}
+.hero-banner--33::before{padding-bottom: 33.33333333%;}
+.hero-banner--50::before{padding-bottom: 50%;}
+
+.hero-banner img{
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%);
+
+	width: 100%;
+}
